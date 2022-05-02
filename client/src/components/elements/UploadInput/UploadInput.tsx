@@ -24,10 +24,11 @@ export const UploadInput: FC<UploadInputProps> = (props) => {
 
   return (
     <Styled.Container>
-      <Styled.Label htmlFor="upload-input">Upload file</Styled.Label>
+      <Styled.Label htmlFor="file-input" data-testid="file-input-label">Upload file</Styled.Label>
       <Styled.Input
+        data-testid="file-input"
         type="file"
-        id="upload-input"
+        id="file-input"
         multiple
         onChange={onLoadFiles}
       />

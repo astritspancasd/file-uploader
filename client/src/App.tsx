@@ -1,12 +1,18 @@
 import { FileUploadPage } from "./pages";
-import { FileUploadProvider, ThemeProvider } from "./providers";
+import {
+  FileUploadProvider,
+  ThemeProvider,
+  SnackbarProvider,
+} from "./providers";
 
 const App = () => {
   return (
     <ThemeProvider>
-      <FileUploadProvider>
-        <FileUploadPage />
-      </FileUploadProvider>
+      <SnackbarProvider>
+        <FileUploadProvider>
+          <FileUploadPage />
+        </FileUploadProvider>
+      </SnackbarProvider>
     </ThemeProvider>
   );
 };
