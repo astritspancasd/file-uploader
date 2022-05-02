@@ -14,14 +14,20 @@ const Styled = {
 
 type UploadButtonProps = {
   onUploadFiles: () => void;
+  [key: string]: any;
 };
 
 export const UploadButton: FC<UploadButtonProps> = (props) => {
-  const { onUploadFiles } = props;
+  const { onUploadFiles, ...rest } = props;
 
   return (
     <Styled.Container>
-      <Styled.Button type="button" id="upload-button" onClick={onUploadFiles}>
+      <Styled.Button
+        type="button"
+        id="upload-button"
+        onClick={onUploadFiles}
+        {...rest}
+      >
         Upload
       </Styled.Button>
     </Styled.Container>

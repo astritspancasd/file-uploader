@@ -4,7 +4,7 @@ export const filesToFormData = (files: File[]) => {
   const formData = new FormData();
 
   files.forEach((file) => {
-    formData.append(file.name, file);
+    formData.append('image', file);
   });
 
   return formData;

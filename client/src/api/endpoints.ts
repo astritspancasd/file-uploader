@@ -1,1 +1,1 @@
-export const UPLOAD_FILES_URL = '/files/upload';
+export const UPLOAD_INFO_URL = '/files/info';

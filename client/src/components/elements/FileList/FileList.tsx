@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { FilePreview } from "../FilePreview";
 import styled from "styled-components";
 
@@ -23,12 +23,12 @@ export const FileList: FC<FileListProps> = (props) => {
   return (
     <Styled.Container>
       {files.map((file) => (
-        <>
+        <Fragment key={file.name}>
           <FilePreview file={file} />
           <Styled.Button onClick={() => onRemoveFile(file.name)}>
             Remove file
           </Styled.Button>
-        </>
+        </Fragment>
       ))}
     </Styled.Container>
   );

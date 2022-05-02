@@ -1,11 +1,29 @@
 import { api } from "./config";
-import { UPLOAD_FILES_URL } from "./endpoints";
+import { UPLOAD_INFO_URL } from "./endpoints";
 import { POST } from "./methods";
 
-export const uploadFileRequest = (formData: FormData) => {
+const options = {
+  controller: new AbortController(),
+};
+
+export const uploadFileRequest = (url: string, formData: FormData) => {
   return api({
-    url: UPLOAD_FILES_URL,
+    url,
     method: POST,
     data: formData,
+    signal: options.controller.signal,
   });
+};
+
+export const cancelUploadFileRequest = () => {
+  options.controller.abort();
+  options.controller = new AbortController();
+};
+
+export const uploadInfoRequest = async () => {
+  return await (
+    await api({
+      url: UPLOAD_INFO_URL,
+    })
+  ).data;
 };
