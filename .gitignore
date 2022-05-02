@@ -14,8 +14,8 @@
 /server/build
 
 # static assets
-/server/uploads/images
-/server/uploads/files
+/server/uploads/images/
+/server/uploads/files/
 
 # misc
 .DS_Store
